@@ -1,0 +1,6 @@
+rootProject.name = 'cloud_demo'
+include 'common'
+include 'user'
+include 'eureka'
+include 'test'
+

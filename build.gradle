@@ -1,0 +1,55 @@
+group 'cn.shaines'
+version '0.1.1'
+
+buildscript {
+    ext {
+        // 定义变量
+        springBootVersion = '2.0.1.RELEASE'
+        springCloudVersion = 'Finchley.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    dependencyManagement {
+        imports {
+            // 解决cloud零散jar的版本问题
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+
+    // 统一移除jar
+    /*configurations {
+        all*.exclude module: 'spring-boot-starter-logging'
+        all*.exclude module: 'logback-classic'
+    }*/
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile('org.springframework.boot:spring-boot-starter')
+        compile('org.springframework.boot:spring-boot-starter-web')
+        compile('org.springframework.boot:spring-boot-starter-test')
+        // compile ':spring-cloud-starter-config'
+        // compile ':spring-cloud-starter-eureka'
+
+        // compile(group: 'com.qcloud', name: 'cos_api', version:'4.4') {
+        //     exclude(module: 'slf4j-log4j12')
+        // }
+    }
+}
+

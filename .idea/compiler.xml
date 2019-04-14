@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="cloud_demo.main" target="1.8" />
+      <module name="cn.shaines.eureka.main" target="1.8" />
+      <module name="cn.shaines.eureka.test" target="1.8" />
+      <module name="cn.shaines.test.main" target="1.8" />
+      <module name="cn.shaines.test.test" target="1.8" />
+      <module name="cn.shaines.user.main" target="1.8" />
+      <module name="cn.shaines.user.test" target="1.8" />
+      <module name="com.xxx.yyy.cloud_demo.main" target="1.8" />
+      <module name="com.xxx.yyy.cloud_demo.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
